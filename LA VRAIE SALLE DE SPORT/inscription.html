@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscription - Abonnement</title>
+  <link rel="stylesheet" href="assets/CSS/commun.css">
+  <link rel="stylesheet" href="assets/CSS/inscription.css">
+  
+</head>
+<body>
+   <header>
+            <nav>
+                <img src="assets/IMG/logogym.png" alt="logo muscu" height="100px" width="100px">
+            <div class="right">
+                <a href="index.html">Accueil</a>
+                <a href="gallery.html">Galerie</a>
+                <a href="inscription.html">Inscription</a>
+                <a href="planning.html">Planning</a>
+            </div>
+            </nav>
+    </header>
+
+  <div class="container">
+    <h2>Formulaire d'inscription</h2>
+    <form>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="tel">Téléphone :</label>
+      <input type="tel" id="tel" name="tel" required>
+
+      <label>Choisissez une formule :</label>
+      <div class="abonnements">
+        <label class="card">
+          <input type="radio" name="abonnement" value="3mois" required>
+          <h3>3 MOIS</h3>
+          <p>par mois</p>
+          <div class="price">99€</div>
+          <img src="assets/IMG/Champi_MK8.webp" alt="7.5kg">
+        </label>
+
+        <label class="card">
+          <input type="radio" name="abonnement" value="6mois">
+          <h3>6 MOIS</h3>
+          <p>par mois</p>
+          <div class="price">85€</div>
+          <img src="assets/IMG/SM3DWFleurDeFeu.webp" alt="25kg">
+        </label>
+
+        <label class="card">
+          <input type="radio" name="abonnement" value="1an">
+          <h3>1 AN</h3>
+          <p>par mois</p>
+          <div class="price">70€</div>
+          <img src="assets/IMG/MK8SuperEtoile.webp" alt="50kg">
+        </label>
+      </div>
+
+      <input type="submit" value="S'inscrire">
+    </form>
+  </div>
+  <footer>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Logo à gauche -->
+            <div class="footer-section logo-section">
+
+                <img src="assets/IMG/logogym.png" width="100px" height="100px">
+            </div>
+
+            <!-- Contact au milieu -->
+            <div class="footer-section contact-section">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <p><strong>14 rue Georges st Martin</strong><br>
+                        13007 Marseille</p>
+                    <p>04 90 96 91 17</p>
+                    <p>contact@gymbros.com</p>
+                </div>
+            </div>
+
+            <!-- Réseaux sociaux à droite -->
+            <div class="footer-section social-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href=""><img src="assets/IMG/instagram-svgrepo-com.svg"35px" height="30px"></a>
+                    <a href=""><img src="assets/IMG/tiktok-svgrepo-com.svg" width="35px" height="30px"></a>
+                    <a href=""><img src="assets/IMG/twitter-154-svgrepo-com.svg" width="35px" height="30px"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fitness Center. Tous droits réservés.</p>
+        </div>
+    </footer>
+</footer>
+</body>
+</html>

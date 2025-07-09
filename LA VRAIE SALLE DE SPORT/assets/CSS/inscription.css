@@ -1,0 +1,175 @@
+
+
+.container {
+  /* Sur mobile : pleine largeur avec un peu d'espace */
+  max-width: 80%;
+  margin: 0 auto;
+  background: none;
+  padding: 15px; /* - de padding sur mobile */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px; /* - d'espace en bas */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Moins d'espace sur mobile */
+  font-size: 1.5rem; /* Taille plus petite sur mobile */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Moins d'espace entre les éléments */
+}
+
+label {
+  font-weight: bold;
+  color: #000;
+  font-size: 0.9rem; /* Taille plus petite sur mobile */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px; /* Un peu plus de padding pour les doigts */
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px; 
+}
+
+.abonnements {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 100%; /* Pleine largeur sur mobile */
+  border: 2px solid transparent;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card input[type="radio"] {
+  display: none;
+}
+
+.card.selected {
+  border: 2px solid #cfa14d;
+  box-shadow: 0 0 15px rgba(207, 161, 77, 0.6);
+}
+
+.card h3 {
+  background: #000;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 8px 8px 0 0;
+  margin: -15px -15px 15px -15px;
+  font-size: 1.1rem; /* Taille adaptée mobile */
+}
+
+.card img {
+  max-width: 80px; /* Plus petit sur mobile */
+  height: auto;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 20px; /* Plus petit sur mobile */
+  font-weight: bold;
+  color: #cfa14d;
+  margin-bottom: 5px;
+}
+
+.card small {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+input[type="submit"] {
+  padding: 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background: #cfa14d;
+}
+
+/* TABLETTES - À partir de 768px */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+    padding: 25px;
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .abonnements {
+    flex-direction: row; /* TABLETTE : les cartes côte à côte */
+    gap: 20px;
+  }
+  
+  .card {
+    flex: 1; /* Les cartes se partagent l'espace */
+  }
+  
+  .card img {
+    max-width: 90px;
+  }
+  
+  .price {
+    font-size: 22px;
+  }
+}
+
+/* DESKTOP - À partir de 1024px */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 900px;
+    padding: 30px;
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  
+  form {
+    gap: 20px;
+  }
+  
+  .card img {
+    max-width: 100px;
+  }
+  
+  .price {
+    font-size: 24px;
+  }
+}
