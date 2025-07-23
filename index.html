@@ -2,210 +2,183 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <title>GeekFit - Salle de Sport pour Geeks</title>
-    <link rel="stylesheet" href="assets/CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-    <title>Accueil</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeekFit - Salle de Sport pour Geeks</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.stat-animated');
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const speed = +counter.getAttribute('data-speed') || 100;
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target + (counter.getAttribute('data-suffix') || '');
+          }
+        };
+
+        updateCount();
+      });
+    });
+  </script>
 </head>
 
-<body>
-    <!-- Barre de navigation -->
-    <header>
-            <nav>
-                <img src="assets/IMG/logogym.png" alt="logo muscu" height="100px" width="100px">
-            <div class="right">
-                <a href="index.html">Accueil</a>
-                <a href="gallery.html">Galerie</a>
-                <a href="inscription.html">Inscription</a>
-                <a href="planning.html">Planning</a>
-            </div>
-            </nav>
-    </header>
+<body class="min-h-screen bg-gradient-to-b from-purple-700 to-blue-700 text-white">
+  <!-- Header avec menu responsive -->
+   <header class="bg-black bg-opacity-80 shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <img src="assets/IMG/logogym.png" alt="logo muscu" class="w-16 h-16">
+      <div class="sm:hidden">
+        <button class="btn btn-sm btn-ghost" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden sm:flex gap-4">
+        <a class="text-white hover:underline" href="index.html">Accueil</a>
+        <a class="text-white hover:underline" href="gallery.html">Galerie</a>
+        <a class="text-white hover:underline" href="inscription.html">Inscription</a>
+        <a class="text-white hover:underline" href="planning.html">Planning</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4">
+      <a class="block text-white py-1" href="index.html">Accueil</a>
+      <a class="block text-white py-1" href="gallery.html">Galerie</a>
+      <a class="block text-white py-1" href="inscription.html">Inscription</a>
+      <a class="block text-white py-1" href="planning.html">Planning</a>
+    </div>
+  </header>
+  <!-- Hero -->
+  <section class="text-center py-16 px-6">
+    <h1 class="text-5xl font-bold mb-4 honk">GYM.BROS</h1>
+    <p class="text-xl">La salle de sport faite pour les geeks !</p>
+  </section>
 
-    <!-- Section principale -->
-    <section class="hero">
-        <div class="container">
-            <h1>GYM.BROS</h1>
-            <p>La salle de sport faite pour les geeks !</p>
+  <!-- Stats avec animation -->
+  <section class="py-10 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Nos Stats</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <div>
+        <div class="text-4xl font-bold stat-animated" data-target="500" data-speed="80" data-suffix="+">0</div>
+        <div>Geeks Membres</div>
+      </div>
+      <div>
+        <div class="text-4xl font-bold stat-animated" data-target="30" data-speed="50" data-suffix="+">0</div>
+        <div>Machines</div>
+      </div>
+      <div>
+        <div class="text-4xl font-bold stat-animated" data-target="100" data-speed="60" data-suffix="%">0</div>
+        <div>Fun Garanti</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Le reste du code reste inchangé... -->
+<!-- Features -->
+  <section class="py-10 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Ce qui nous rend unique</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 bg-white bg-opacity-10 rounded-lg">
+        <div class="text-4xl mb-2">🎮</div>
+        <h3 class="text-xl font-bold">Gaming Zone</h3>
+        <p>Détendez-vous après l'effort avec nos consoles et PC gaming</p>
+      </div>
+      <div class="p-6 bg-white bg-opacity-10 rounded-lg">
+        <div class="text-4xl mb-2">📊</div>
+        <h3 class="text-xl font-bold">Stats en temps réel</h3>
+        <p>Suivez vos progrès comme dans un jeu vidéo avec des niveaux et XP</p>
+      </div>
+      <div class="p-6 bg-white bg-opacity-10 rounded-lg">
+        <div class="text-4xl mb-2">🤖</div>
+        <h3 class="text-xl font-bold">Coach IA</h3>
+        <p>Un assistant intelligent pour vous guider dans vos entraînements</p>
+      </div>
+      <div class="p-6 bg-white bg-opacity-10 rounded-lg">
+        <div class="text-4xl mb-2">💻</div>
+        <h3 class="text-xl font-bold">Équipements Tech</h3>
+        <p>Machines connectées et écrans interactifs partout</p>
+      </div>
+      <div class="p-6 bg-white bg-opacity-10 rounded-lg">
+        <div class="text-4xl mb-2">🏆</div>
+        <h3 class="text-xl font-bold">Tournois & Défis</h3>
+        <p>Participez à des compétitions fitness et gaming</p>
+      </div>
+      <div class="p-6 bg-white bg-opacity-10 rounded-lg">
+        <div class="text-4xl mb-2">🎵</div>
+        <h3 class="text-xl font-bold">Playlist Gaming</h3>
+        <p>Musiques de jeux vidéo et ambiance geek pendant l'effort</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning & Equipement -->
+  <section class="py-10 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Nos équipements et planning</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-4">
+        <img src="assets/IMG/freepik__a-connected-rower-in-the-style-of-nintendos-mario-__89651.jpeg" alt="Équipement fitness moderne" class="w-full h-60 object-cover rounded-lg" />
+        <img src="assets/IMG/mariopoid.webp" alt="Équipement de musculation" class="w-full h-60 object-cover rounded-lg" />
+      </div>
+      <div>
+        <table class="table w-full bg-white text-black rounded-lg">
+          <thead>
+            <tr>
+              <th>Jour</th>
+              <th>Ouverture</th>
+              <th>Fermeture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Lundi</td><td>09h00</td><td>23h</td></tr>
+            <tr><td>Mardi</td><td>09h00</td><td>23h</td></tr>
+            <tr><td>Mercredi</td><td>09h00</td><td>23h</td></tr>
+            <tr><td>Jeudi</td><td>09h00</td><td>23h</td></tr>
+            <tr><td>Vendredi</td><td>09h00</td><td>23h</td></tr>
+            <tr><td>Samedi</td><td>08h00</td><td>00h00</td></tr>
+            <tr><td>Dimanche</td><td>08h00</td><td>00h00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0f172a] mt-10 text-white">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 py-8 text-center sm:text-left">
+      <div class="flex justify-center sm:justify-start">
+        <img src="assets/IMG/logogym.png" alt="logo" class="w-16 h-16" />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg">Contact</h3>
+        <p>14 rue Georges st Martin<br />13007 Marseille</p>
+        <p>04 90 96 91 17</p>
+        <p>contact@gymbros.com</p>
+      </div>
+      <div class="flex flex-col items-center sm:items-end">
+        <h3 class="font-bold text-lg mb-2">Suivez-nous</h3>
+        <div class="flex gap-4">
+          <a href="#"><img src="assets/IMG/instagram-svgrepo-com.svg" class="w-7 h-7" alt="Instagram" /></a>
+          <a href="#"><img src="assets/IMG/tiktok-svgrepo-com.svg" class="w-7 h-7" alt="TikTok" /></a>
+          <a href="#"><img src="assets/IMG/twitter-154-svgrepo-com.svg" class="w-7 h-7" alt="Twitter" /></a>
         </div>
-    </section>
-
-    <!-- Section statistiques -->
-    <section class="stats">
-        <div class="container">
-            <h2>Nos Stats</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Geeks Membres</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label">Machines</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Fun Garanti</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section fonctionnalités -->
-    <section class="features">
-        <div class="container">
-            <h2>Ce qui nous rend unique</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3 class="feature-title">Gaming Zone</h3>
-                    <p class="feature-text">Détendez-vous après l'effort avec nos consoles et PC gaming</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Stats en temps réel</h3>
-                    <p class="feature-text">Suivez vos progrès comme dans un jeu vidéo avec des niveaux et XP</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3 class="feature-title">Coach IA</h3>
-                    <p class="feature-text">Un assistant intelligent pour vous guider dans vos entraînements</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3 class="feature-title">Équipements Tech</h3>
-                    <p class="feature-text">Machines connectées et écrans interactifs partout</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3 class="feature-title">Tournois & Défis</h3>
-                    <p class="feature-text">Participez à des compétitions fitness et gaming</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎵</div>
-                    <h3 class="feature-title">Playlist Gaming</h3>
-                    <p class="feature-text">Musiques de jeux vidéo et ambiance geek pendant l'effort</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section machine et tableau -->
-    <section>
-        <div class="section-container">
-            <div class="section-header">
-
-                <h2 class="section-title">Nos équipements et planning</h2>
-            </div>
-
-            <div class="content-wrapper">
-                <div class="images-section">
-                    <div class="image-container">
-                        <img src="assets/IMG/freepik__a-connected-rower-in-the-style-of-nintendos-mario-__89651.jpeg"
-                            alt="Équipement fitness moderne">
-                    </div>
-                    <div class="image-container">
-                        <img src="assets/IMG/mariopoid.webp" alt="Équipement de musculation">
-                    </div>
-                </div>
-
-                <div class="planning-section">
-                    <table class="planning-table">
-                        <thead>
-                            <tr>
-                                <th>Jour</th>
-                                <th>Ouverture</th>
-                                <th>Fermeture</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="day-cell">Lundi</td>
-                                <td class="time-cell">09h00</td>
-                                <td class="time-cell">23h</td>
-                            </tr>
-                            <tr>
-                                <td class="day-cell">Mardi</td>
-                                <td class="time-cell">09h00</td>
-                                <td class="time-cell">23h</td>
-                            </tr>
-                            <tr>
-                                <td class="day-cell">Mercredi</td>
-                                <td class="time-cell">09h00</td>
-                                <td class="time-cell">23h</td>
-                            </tr>
-                            <tr>
-                                <td class="day-cell">Jeudi</td>
-                                <td class="time-cell">09h00</td>
-                                <td class="time-cell">23h</td>
-                            </tr>
-                            <tr>
-                                <td class="day-cell">Vendredi</td>
-                                <td class="time-cell">09h00</td>
-                                <td class="time-cell">23h</td>
-                            </tr>
-                            <tr>
-                                <td class="day-cell">Samedi</td>
-                                <td class="time-cell">08h00</td>
-                                <td class="time-cell">00h00</td>
-                            </tr>
-                            <tr>
-                                <td class="day-cell">Dimanche</td>
-                                <td class="time-cell">08h00</td>
-                                <td class="time-cell">00h00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-<footer>
-    <footer class="footer">
-        <div class="footer-content">
-            <!-- Logo à gauche -->
-            <div class="footer-section logo-section">
-
-                <img src="assets/IMG/logogym.png" width="100px" height="100px">
-            </div>
-
-            <!-- Contact au milieu -->
-            <div class="footer-section contact-section">
-                <h3>Contact</h3>
-                <div class="contact-info">
-                    <p><strong>14 rue Georges st Martin</strong><br>
-                        13007 Marseille</p>
-                    <p>04 90 96 91 17</p>
-                    <p>contact@gymbros.com</p>
-                </div>
-            </div>
-
-            <!-- Réseaux sociaux à droite -->
-            <div class="footer-section social-section">
-                <h3>Suivez-nous</h3>
-                <div class="social-icons">
-                    <a href=""><img src="assets/IMG/instagram-svgrepo-com.svg" width="35px" height="30px"></a>
-                    <a href=""><img src="assets/IMG/tiktok-svgrepo-com.svg" width="35px" height="30px"></a>
-                    <a href=""><img src="assets/IMG/twitter-154-svgrepo-com.svg" width="35px" height="30px"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Fitness Center. Tous droits réservés.</p>
-        </div>
-    </footer>
-</footer>
+      </div>
+    </div>
+    <div class="text-center text-sm py-4 bg-black bg-opacity-80">
+      &copy; 2025 Fitness Center. Tous droits réservés.
+    </div>
+  </footer>
 </body>
+
 </html>

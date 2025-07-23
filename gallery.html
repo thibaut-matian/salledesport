@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="assets/CSS/commun.css">
-  <link rel="stylesheet" href="assets/CSS/gallery.css">
-  <title>Galerie Responsive</title>
-</head>
-<body>
-    <header>
-            <nav>
-                <img src="assets/IMG/logogym.png" alt="logo muscu" height="100px" width="100px">
-            <div class="right">
-                <a href="index.html">Accueil</a>
-                <a href="gallery.html">Galerie</a>
-                <a href="inscription.html">Inscription</a>
-                <a href="planning.html">Planning</a>
-            </div>
-            </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Galerie Responsive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-purple-700 to-blue-700 text-white">
+    <!-- Header avec menu responsive -->
+     <header class="bg-black bg-opacity-80 shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <img src="assets/IMG/logogym.png" alt="logo muscu" class="w-16 h-16">
+      <div class="sm:hidden">
+        <button class="btn btn-sm btn-ghost" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden sm:flex gap-4">
+        <a class="text-white hover:underline" href="index.html">Accueil</a>
+        <a class="text-white hover:underline" href="gallery.html">Galerie</a>
+        <a class="text-white hover:underline" href="inscription.html">Inscription</a>
+        <a class="text-white hover:underline" href="planning.html">Planning</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4">
+      <a class="block text-white py-1" href="index.html">Accueil</a>
+      <a class="block text-white py-1" href="gallery.html">Galerie</a>
+      <a class="block text-white py-1" href="inscription.html">Inscription</a>
+      <a class="block text-white py-1" href="planning.html">Planning</a>
+    </div>
+  </header>
 
+    <!-- Galerie Responsive -->
+    <section class="p-4 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-8 lg:grid-rows-4 gap-4">
+        <!-- 16 images avec même dimension -->
+        <img src="assets/IMG/couple.png" alt="Image 1" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/haltère.jpg" alt="Image 2" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/monsterhunter.webp" alt="Image 3" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/sallemario.webp" alt="Image 4" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/couple.png" alt="Image 5" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/haltère.jpg" alt="Image 6" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/monsterhunter.webp" alt="Image 7" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/sallemario.webp" alt="Image 8" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/couple.png" alt="Image 9" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/haltère.jpg" alt="Image 10" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/monsterhunter.webp" alt="Image 11" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/sallemario.webp" alt="Image 12" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/couple.png" alt="Image 13" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/haltère.jpg" alt="Image 14" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/monsterhunter.webp" alt="Image 15" class="w-full h-48 object-cover rounded-lg" />
+        <img src="assets/IMG/sallemario.webp" alt="Image 16" class="w-full h-48 object-cover rounded-lg" />
+      </div>
+    </section>
 
-
-  <section class="gallery">
-    <img src="assets/IMG/couple.png" alt="Image 1">
-    <img src="assets/IMG/haltère.jpg" alt="Image 2">
-    <img src="assets/IMG/monsterhunter.webp" alt="Image 3">
-    <img src="assets/IMG/sallemario.webp" alt="Image 4">
-    <img src="assets/IMG/couple.png" alt="Image 5">
-    <img src="assets/IMG/haltère.jpg" alt="Image 6">
-    <img src="assets/IMG/monsterhunter.webp"Image 7">
-    <img src="assets/IMG/sallemario.webp" alt="Image 8">
-    <img src="assets/IMG/couple.png" alt="Image 9">
-    <img src="assets/IMG/haltère.jpg" alt="Image 10">
-    <img src="assets/IMG/monsterhunter.webp" alt="Image 11">
-    <img src="assets/IMG/sallemario.webp" alt="Image 12">
-    <img src="assets/IMG/couple.png" alt="Image 13">
-    <img src="assets/IMG/haltère.jpg" alt="Image 14">
-    <img src="assets/IMG/monsterhunter.webp" alt="Image 15">
-    <img src="assets/IMG/sallemario.webp" alt="Image 16">
-  </section>
-<footer>
-    <footer class="footer">
-        <div class="footer-content">
-            <!-- Logo à gauche -->
-            <div class="footer-section logo-section">
-
-                <img src="assets/IMG/logogym.png" width="100px" height="100px">
-            </div>
-
-            <!-- Contact au milieu -->
-            <div class="footer-section contact-section">
-                <h3>Contact</h3>
-                <div class="contact-info">
-                    <p><strong>14 rue Georges st Martin</strong><br>
-                        13007 Marseille</p>
-                    <p>04 90 96 91 17</p>
-                    <p>contact@gymbros.com</p>
-                </div>
-            </div>
-
-            <!-- Réseaux sociaux à droite -->
-            <div class="footer-section social-section">
-                <h3>Suivez-nous</h3>
-                <div class="social-icons">
-                    <a href=""><img src="assets/IMG/instagram-svgrepo-com.svg" width="35px" height="30px"></a>
-                    <a href=""><img src="assets/IMG/tiktok-svgrepo-com.svg" width="35px" height="30px"></a>
-                    <a href=""><img src="assets/IMG/twitter-154-svgrepo-com.svg" width="35px" height="30px"></a>
-                </div>
-            </div>
+    <!-- Footer -->
+  <footer class="bg-[#0f172a] mt-10 text-white">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 py-8 text-center sm:text-left">
+      <div class="flex justify-center sm:justify-start">
+        <img src="assets/IMG/logogym.png" alt="logo" class="w-16 h-16" />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg">Contact</h3>
+        <p>14 rue Georges st Martin<br />13007 Marseille</p>
+        <p>04 90 96 91 17</p>
+        <p>contact@gymbros.com</p>
+      </div>
+      <div class="flex flex-col items-center sm:items-end">
+        <h3 class="font-bold text-lg mb-2">Suivez-nous</h3>
+        <div class="flex gap-4">
+          <a href="#"><img src="assets/IMG/instagram-svgrepo-com.svg" class="w-7 h-7" alt="Instagram" /></a>
+          <a href="#"><img src="assets/IMG/tiktok-svgrepo-com.svg" class="w-7 h-7" alt="TikTok" /></a>
+          <a href="#"><img src="assets/IMG/twitter-154-svgrepo-com.svg" class="w-7 h-7" alt="Twitter" /></a>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Fitness Center. Tous droits réservés.</p>
-        </div>
-    </footer>
-</footer>
+      </div>
+    </div>
+    <div class="text-center text-sm py-4 bg-black bg-opacity-80">
+      &copy; 2025 Fitness Center. Tous droits réservés.
+    </div>
+  </footer>
 </body>
+
 </html>

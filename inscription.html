@@ -3,103 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <title>Inscription - Abonnement</title>
-  <link rel="stylesheet" href="assets/CSS/commun.css">
-  <link rel="stylesheet" href="assets/CSS/inscription.css">
-  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.css" rel="stylesheet" />
 </head>
-<body>
-   <header>
-            <nav>
-                <img src="assets/IMG/logogym.png" alt="logo muscu" height="100px" width="100px">
-            <div class="right">
-                <a href="index.html">Accueil</a>
-                <a href="gallery.html">Galerie</a>
-                <a href="inscription.html">Inscription</a>
-                <a href="planning.html">Planning</a>
-            </div>
-            </nav>
-    </header>
-
-  <div class="container">
-    <h2>Formulaire d'inscription</h2>
-    <form>
-      <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="nom" required>
-
-      <label for="prenom">Prénom :</label>
-      <input type="text" id="prenom" name="prenom" required>
-
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="tel">Téléphone :</label>
-      <input type="tel" id="tel" name="tel" required>
-
-      <label>Choisissez une formule :</label>
-      <div class="abonnements">
-        <label class="card">
-          <input type="radio" name="abonnement" value="3mois" required>
-          <h3>3 MOIS</h3>
-          <p>par mois</p>
-          <div class="price">99€</div>
-          <img src="assets/IMG/Champi_MK8.webp" alt="7.5kg">
-        </label>
-
-        <label class="card">
-          <input type="radio" name="abonnement" value="6mois">
-          <h3>6 MOIS</h3>
-          <p>par mois</p>
-          <div class="price">85€</div>
-          <img src="assets/IMG/SM3DWFleurDeFeu.webp" alt="25kg">
-        </label>
-
-        <label class="card">
-          <input type="radio" name="abonnement" value="1an">
-          <h3>1 AN</h3>
-          <p>par mois</p>
-          <div class="price">70€</div>
-          <img src="assets/IMG/MK8SuperEtoile.webp" alt="50kg">
-        </label>
+<body class="min-h-screen bg-gradient-to-b from-purple-700 to-blue-700 text-white">
+   <header class="bg-black bg-opacity-80 shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <img src="assets/IMG/logogym.png" alt="logo muscu" class="w-16 h-16">
+      <div class="sm:hidden">
+        <button class="btn btn-sm btn-ghost" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-
-      <input type="submit" value="S'inscrire">
-    </form>
-  </div>
-  <footer>
-    <footer class="footer">
-        <div class="footer-content">
-            <!-- Logo à gauche -->
-            <div class="footer-section logo-section">
-
-                <img src="assets/IMG/logogym.png" width="100px" height="100px">
-            </div>
-
-            <!-- Contact au milieu -->
-            <div class="footer-section contact-section">
-                <h3>Contact</h3>
-                <div class="contact-info">
-                    <p><strong>14 rue Georges st Martin</strong><br>
-                        13007 Marseille</p>
-                    <p>04 90 96 91 17</p>
-                    <p>contact@gymbros.com</p>
-                </div>
-            </div>
-
-            <!-- Réseaux sociaux à droite -->
-            <div class="footer-section social-section">
-                <h3>Suivez-nous</h3>
-                <div class="social-icons">
-                    <a href=""><img src="assets/IMG/instagram-svgrepo-com.svg"35px" height="30px"></a>
-                    <a href=""><img src="assets/IMG/tiktok-svgrepo-com.svg" width="35px" height="30px"></a>
-                    <a href=""><img src="assets/IMG/twitter-154-svgrepo-com.svg" width="35px" height="30px"></a>
-                </div>
-            </div>
+      <div class="hidden sm:flex gap-4">
+        <a class="text-white hover:underline" href="index.html">Accueil</a>
+        <a class="text-white hover:underline" href="gallery.html">Galerie</a>
+        <a class="text-white hover:underline" href="inscription.html">Inscription</a>
+        <a class="text-white hover:underline" href="planning.html">Planning</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4">
+      <a class="block text-white py-1" href="index.html">Accueil</a>
+      <a class="block text-white py-1" href="gallery.html">Galerie</a>
+      <a class="block text-white py-1" href="inscription.html">Inscription</a>
+      <a class="block text-white py-1" href="planning.html">Planning</a>
+    </div>
+  </header>
+  
+  <main class="container mx-auto px-4 py-8">
+    <div class="bg-purple-800 bg-opacity-50 rounded-lg p-6 shadow-lg max-w-2xl mx-auto">
+      <h2 class="text-center text-xl font-bold mb-6 text-white">Formulaire d'inscription</h2>
+      <form class="space-y-4">
+        <div>
+          <input type="text" name="nom" placeholder="Nom" class="input input-bordered w-full" required>
+        </div>
+        <div>
+          <input type="text" name="prenom" placeholder="Prénom" class="input input-bordered w-full" required>
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Email" class="input input-bordered w-full" required>
+        </div>
+        <div>
+          <input type="tel" name="tel" placeholder="Téléphone" class="input input-bordered w-full" required>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 Fitness Center. Tous droits réservés.</p>
+        <p class="text-white font-semibold pt-2">Choisissez une formule :</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <label class="card bg-white text-black shadow-lg cursor-pointer items-center">
+            <input type="radio" name="abonnement" value="3mois" class="hidden peer" required>
+            <div class="card-body text-center">
+              <h3 class="font-bold text-lg">3 MOIS</h3>
+              <p>par mois</p>
+              <div class="text-xl font-bold">99€</div>
+              <img src="assets/IMG/Champi_MK8.webp" alt="champi" class="w-12 h-12 mx-auto">
+            </div>
+          </label>
+
+          <label class="card bg-white text-black shadow-lg cursor-pointer items-center">
+            <input type="radio" name="abonnement" value="6mois" class="hidden peer">
+            <div class="card-body text-center">
+              <h3 class="font-bold text-lg">6 MOIS</h3>
+              <p>par mois</p>
+              <div class="text-xl font-bold">85€</div>
+              <img src="assets/IMG/SM3DWFleurDeFeu.webp" alt="fleur" class="w-12 h-12 mx-auto">
+            </div>
+          </label>
+
+          <label class="card bg-white text-black shadow-lg cursor-pointer items-center">
+            <input type="radio" name="abonnement" value="1an" class="hidden peer">
+            <div class="card-body text-center">
+              <h3 class="font-bold text-lg">1 AN</h3>
+              <p>par mois</p>
+              <div class="text-xl font-bold">70€</div>
+              <img src="assets/IMG/MK8SuperEtoile.webp" alt="étoile" class="w-12 h-12 mx-auto">
+            </div>
+          </label>
         </div>
-    </footer>
-</footer>
+
+        <div class="text-center">
+          <button type="submit" class="btn bg-black text-white mt-4">S'inscrire</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  
+  <footer class="bg-[#0f172a] mt-10 text-white">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 py-8 text-center sm:text-left">
+      <div class="flex justify-center sm:justify-start">
+        <img src="assets/IMG/logogym.png" alt="logo" class="w-16 h-16" />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg">Contact</h3>
+        <p>14 rue Georges st Martin<br />13007 Marseille</p>
+        <p>04 90 96 91 17</p>
+        <p>contact@gymbros.com</p>
+      </div>
+      <div class="flex flex-col items-center sm:items-end">
+        <h3 class="font-bold text-lg mb-2">Suivez-nous</h3>
+        <div class="flex gap-4">
+          <a href="#"><img src="assets/IMG/instagram-svgrepo-com.svg" class="w-7 h-7" alt="Instagram" /></a>
+          <a href="#"><img src="assets/IMG/tiktok-svgrepo-com.svg" class="w-7 h-7" alt="TikTok" /></a>
+          <a href="#"><img src="assets/IMG/twitter-154-svgrepo-com.svg" class="w-7 h-7" alt="Twitter" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-sm py-4 bg-black bg-opacity-80">
+      &copy; 2025 Fitness Center. Tous droits réservés.
+    </div>
+  </footer>
 </body>
+
 </html>
