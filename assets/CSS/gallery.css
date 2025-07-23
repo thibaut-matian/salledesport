@@ -1,0 +1,211 @@
+.gallery {
+    /* display: grid = crée une grille pour organiser les images */
+    display: grid;
+
+    /* grid-template-columns: 1fr = 1 seule colonne qui prend toute la largeur */
+    grid-template-columns: 1fr;
+
+    /* espace de 15px entre chaque image */
+    gap: 15px;
+
+    /*  espace de 20px autour de la galerie */
+    padding: 20px;
+
+    /* la galerie ne dépassera jamais 1200px de large */
+    max-width: 1000px;
+
+    /* centre la galerie sur la page */
+    margin: 0 auto;
+}
+
+/* Style pour TOUTES les images de la galerie */
+.gallery img {
+    /*   l'image prend toute la largeur de sa case */
+    width: 100%;
+
+    /*toutes les images font 250px de haut */
+    height: 250px;
+
+    /*  l'image remplit sa case sans se déformer */
+    object-fit: cover;
+
+    /*  coins arrondis de 8px */
+    border-radius: 8px;
+
+    /*  ombre portée pour un effet 3D */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /*  animation douce quand on survole l'image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /*  curseur main au survol */
+    cursor: pointer;
+}
+
+/* Style quand on survole une image avec la souris */
+.gallery img:hover {
+    /* transform: scale(1.05) = agrandit l'image de 5% */
+    transform: scale(1.05);
+
+    /* Ombre plus forte au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (min-width: 768px) {
+    .gallery {
+        /* repeat(2, 1fr) = 2 colonnes de taille égale */
+        grid-template-columns: repeat(2, 1fr);
+
+        /* Plus d'espace entre les images */
+        gap: 20px;
+        padding: 30px;
+    }
+
+
+    .gallery img {
+        height: 220px;
+    }
+}
+
+/* 
+@media (min-width: 1024px) = à partir de 1024px de largeur d'écran
+*/
+
+@media (min-width: 1024px) {
+    .gallery {
+        /* repeat(4, 1fr) = 4 colonnes de taille égale */
+        grid-template-columns: repeat(4, 1fr);
+
+        /* Encore plus d'espace */
+        gap: 25px;
+        padding: 40px;
+    }
+
+    /* Images moins hautes sur desktop car plus petites */
+    .gallery img {
+        height: 200px;
+    }
+}
+
+
+/*  Animation */
+
+.gallery img {
+    /* opacity: 0 = image invisible au départ */
+    opacity: 0;
+
+    /* Animation qui fait apparaître l'image */
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Chaque image apparaît avec un petit délai */
+.gallery img:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.gallery img:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.gallery img:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.gallery img:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.gallery img:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.gallery img:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.gallery img:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.gallery img:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.gallery img:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+.gallery img:nth-child(10) {
+    animation-delay: 1.0s;
+}
+
+.gallery img:nth-child(11) {
+    animation-delay: 1.1s;
+}
+
+.gallery img:nth-child(12) {
+    animation-delay: 1.2s;
+}
+
+.gallery img:nth-child(13) {
+    animation-delay: 1.3s;
+}
+
+.gallery img:nth-child(14) {
+    animation-delay: 1.4s;
+}
+
+.gallery img:nth-child(15) {
+    animation-delay: 1.5s;
+}
+
+.gallery img:nth-child(16) {
+    animation-delay: 1.6s;
+}
+
+
+@keyframes fadeIn {
+
+    /* Au début : invisible et décalée vers le bas */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    /* À la fin : visible et à sa position normale */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Espace entre le header et la galerie */
+header {
+    margin-bottom: 30px;
+}
+
+
+@media (min-width: 768px) {
+    header {
+        margin-bottom: 40px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    header {
+        margin-bottom: 50px;
+    }
+}
+
+footer.footer {
+    margin-top: 50px;
+}
+
+
+.gallery img:active {
+    transform: scale(0.95);
+}
